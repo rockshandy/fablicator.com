@@ -1,0 +1,108 @@
+/* HTML5 display definitions */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio:not([controls]) { display: none; }
+[hidden] { display: none; }
+
+/* Base */
+
+/*
+ * 1. Correct text resizing oddly in IE6/7 when body font-size is set using em units
+ * 2. Force vertical scrollbar in non-IE
+ * 3. Prevent iOS text size adjust on device orientation change, without disabling user zoom: h5bp.com/g
+ */
+
+html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+body { margin: 0; font-size: 13px; line-height: 1.231; }
+body, button, input, select, textarea { font-family: sans-serif; color: #222; }
+
+/* Links */
+
+a { color: #00e; }
+a:visited { color: #551a8b; }
+a:hover { color: #06e; }
+a:focus { outline: thin dotted; }
+
+/* Improve readability when focused and hovered in all browsers: h5bp.com/h */
+a:hover, a:active { outline: 0; }
+
+/*
+ * 1. Improve image quality when scaled in IE7: h5bp.com/d
+ * 2. Remove the gap between images and borders on image containers: h5bp.com/e
+ */
+
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+
+/* Lists */
+
+ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
+dd { margin: 0 0 0 40px; }
+nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
+
+
+/* Layout */
+
+/*
+ * attempted color scheme
+ * background #b7b7b7
+ */
+
+body {
+  background-color: #565656
+}
+
+#wrapper {
+  width: 960px;
+  margin: 0 auto;
+  position: relative; /*
+  -moz-box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+	-webkit-box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+	box-shadow: 0 10px 20px rgba(0,0,0,0.3); */
+}
+
+#wrapper > header {
+  padding: 10px 5px;
+  border-bottom: 5px solid #FF9900;
+  background: #565656
+}
+
+#main {
+  background: #fff;
+  padding: 4px 10px;
+  -moz-box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+	-webkit-box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+	box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+nav {
+  float: right;
+  margin: -4px -10px 2px 10px;
+  padding: 20px 5px 20px 10px;
+  background: #D3D9DF;
+  border-top: 5px solid #989898;
+  -webkit-border-bottom-left-radius: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+figure img {
+  margin: 5px auto;
+  display: block;
+  border: 1px solid #000;
+  padding: 5px
+}
+
+figcaption {
+  font-style: italic;
+  text-align: center;
+}
+
+.right {
+  float: right;
+}
+
+footer {
+  padding: 2px 15px;
+  color: #D3D9DF;
+}
