@@ -9,7 +9,7 @@ set :application, "fablicator.com"
 set :repository,  "git@github.com:rockshandy/fablicator.com.git"
 
 set :scm, :git
-set :branch, :masteri
+set :branch, :master
 set :git_shallow_clonne, 1
 set :deploy_via, :remote_cache
 set :copy_compression, :bz2
