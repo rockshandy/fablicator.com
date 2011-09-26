@@ -19,7 +19,12 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
-  pool: 5
+  adapter: mysql
+  encoding: utf8
+  database: fablicator_pro
+  username: blah
+  password: bleh
+  hostname: mysql.fablicator.com
+  port: 3306
   timeout: 5000
+

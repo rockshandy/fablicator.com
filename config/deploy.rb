@@ -3,7 +3,7 @@ require 'bundler/capistrano'
 default_run_options[:pty] = false
 ssh_options[:forward_agent] = true
 set :use_sudo, false
-set :user, "landru13"
+set :user, ENV['fab_user']
 
 set :application, "fablicator.com"
 set :repository,  "git@github.com:rockshandy/fablicator.com.git"
@@ -18,11 +18,11 @@ set :rails_env, 'production'
 #set :local_scm_command, "/usr/bin/git" #correct path to local git
 
 set :rails_env, :production
-set :deploy_to, "/home/#{user}/#{application}"
+set :deploy_to, "/home/#{user}/fab_rails"
 
 role :web, "#{application}"                          # Your HTTP server, Apache/etc
 role :app, "#{application}"                          # This may be the same as your `Web` server
-role :db,  "#{application}", :primary => true # This is where Rails migrations will run
+role :db,  "mysql.#{application}", :primary => true # This is where Rails migrations will run
 # role :db,  "your slave db-server here"
 
 # if you're still using the script/reaper helper you will need
@@ -34,6 +34,27 @@ namespace :deploy do
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
   end
+end
+
+desc "After updating code we need to populate a new database.yml"
+task :after_update_code, :roles => :app do
+  require "yaml"
+  set :production_database_user, proc { Capistrano::CLI.password_prompt("Production database remote user : ") }
+  set :production_database_password, proc { Capistrano::CLI.password_prompt("Production database remote Password : ") }
+
+  buffer = YAML::load_file('config/database.yml.example')
+  # get ride of uneeded configurations
+  buffer.delete('test')
+  buffer.delete('development')
+
+  # Populate production element
+  buffer['production']['adapter'] = "mysql"
+  buffer['production']['database'] = "fablicator_production"
+  buffer['production']['username'] = production_database_user
+  buffer['production']['password'] = production_database_password
+  buffer['production']['host'] = "mysql.fablicator.com"
+
+  put YAML::dump(buffer), "#{release_path}/config/database.yml", :mode => 0664
 end
 
 desc "Restarting after deployment"
