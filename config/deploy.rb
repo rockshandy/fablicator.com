@@ -47,7 +47,7 @@ task :after_update_code, :roles => :app do
   buffer.delete('development')
 
   # Populate production element
-  buffer['production']['adapter'] = "mysql"
+  buffer['production']['adapter'] = "mysql2"
   buffer['production']['database'] = "fablicator_production"
   buffer['production']['username'] = user
   buffer['production']['password'] = production_database_password
