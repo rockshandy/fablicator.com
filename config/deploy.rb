@@ -39,7 +39,6 @@ end
 desc "After updating code we need to populate a new database.yml"
 task :after_update_code, :roles => :app do
   require "yaml"
-  set :production_database_user, proc { Capistrano::CLI.password_prompt("Production database remote user : ") }
   set :production_database_password, proc { Capistrano::CLI.password_prompt("Production database remote Password : ") }
 
   buffer = YAML::load_file('config/database.yml.example')
@@ -50,7 +49,7 @@ task :after_update_code, :roles => :app do
   # Populate production element
   buffer['production']['adapter'] = "mysql"
   buffer['production']['database'] = "fablicator_production"
-  buffer['production']['username'] = production_database_user
+  buffer['production']['username'] = user
   buffer['production']['password'] = production_database_password
   buffer['production']['host'] = "mysql.fablicator.com"
 
