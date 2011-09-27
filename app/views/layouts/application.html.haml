@@ -1,0 +1,27 @@
+!!!
+%html
+  %head
+    %title= "Fablicator - not your average 3d printer"
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+    %title= "Fablicator - not your average 3d printer"
+    %meta{:name=>"description", :content=>"Fablicator: One man's 3d printer dream"}
+    %meta{:name=>"keywords", :content=>"3d,printer,fablicator"}
+  %body
+    #wrapper
+      = yield
+    %footer
+      %p.right andrew@fablicator.com
+      %p.copyright (c) KL Services Group inc.
+  %script
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-25844776-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
