@@ -1,4 +1,5 @@
 require 'bundler/capistrano'
+load 'deploy/assets'
 
 default_run_options[:pty] = false
 ssh_options[:forward_agent] = true
@@ -18,7 +19,7 @@ set :rails_env, 'production'
 #set :local_scm_command, "/usr/bin/git" #correct path to local git
 
 set :rails_env, :production
-set :deploy_to, "/home/#{user}/fab_rails"
+set :deploy_to, "/home/#{user}/#{application}"
 
 role :web, "#{application}"                          # Your HTTP server, Apache/etc
 role :app, "#{application}"                          # This may be the same as your `Web` server
