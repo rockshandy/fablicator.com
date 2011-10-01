@@ -50,6 +50,11 @@ FablicatorCom::Application.routes.draw do
   # just remember to delete public/index.html.
   root :to => 'welcome#index'
 
+  # other welcome routes
+  controller :welcome do
+    match 'gallery', :to => :gallery
+  end
+
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
