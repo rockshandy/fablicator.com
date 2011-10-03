@@ -1,2 +1,9 @@
+= content_for :head do
+  = stylesheet_link_tag "galleria/themes/classic/galleria.classic.css"
+  = javascript_include_tag "galleria/galleria", "galleria/themes/classic/galleria.classic.js"
+  = javascript_include_tag "galleria/plugins/picasa/galleria.picasa.js"
 %h1 This will be a gallery testing page for the meantime
+#galleria
+= content_for :bottom do
+  = javascript_include_tag "welcome.gallery.js"
 
