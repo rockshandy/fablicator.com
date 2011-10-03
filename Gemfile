@@ -20,7 +20,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
+gem 'rack', "1.3.3"
 # Use unicorn as the web server
 # gem 'unicorn'
 
