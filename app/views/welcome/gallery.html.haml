@@ -1,9 +1,14 @@
 = content_for :head do
   = stylesheet_link_tag "galleria.classic.css"
-  = javascript_include_tag "galleria", "galleria.classic.js"
+  = javascript_include_tag "galleria-1.2.5", "galleria.classic.js"
   = javascript_include_tag "galleria.picasa.js"
-%h1 This will be a gallery testing page for the meantime
+%h1 Take a gander!
+%ul#tabs
+  %li.selected
+    %a{:href=>"#"}Printed
+  %li
+    %a{:href=>"#"}Printer
 #galleria
 = content_for :bottom do
-  %script picasa_galleria();
+  %script picasa_galleria('Printed');
 
