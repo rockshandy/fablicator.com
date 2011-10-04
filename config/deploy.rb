@@ -10,7 +10,8 @@ set :application, "fablicator.com"
 set :repository,  "git@github.com:rockshandy/fablicator.com.git"
 
 set :scm, :git
-set :branch, 'master'
+# sends off current git branch
+set :branch, $1 if `git branch` =~ /\* (\S+)\s/m
 set :git_shallow_clone, 1
 set :deploy_via, :copy
 set :copy_cache, true

@@ -7,4 +7,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require google_analytic
+//= require galleria-1.2.5
+//= require galleria.classic
+//= require galleria.picasa
+//= require_tree .
 
