@@ -53,6 +53,8 @@ FablicatorCom::Application.routes.draw do
   # other welcome routes
   controller :welcome do
     match 'gallery', :to => :gallery
+    match 'about', :to => :about
+    match 'faq', :to => :faq
   end
 
   # See how all your routes lay out with "rake routes"
