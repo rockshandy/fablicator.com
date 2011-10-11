@@ -5,6 +5,7 @@ default_run_options[:pty] = false
 ssh_options[:forward_agent] = true
 set :use_sudo, false
 set :user, ENV['fab_user']
+set :keep_releases, 3
 
 set :application, "fablicator.com"
 set :repository,  "git@github.com:rockshandy/fablicator.com.git"
