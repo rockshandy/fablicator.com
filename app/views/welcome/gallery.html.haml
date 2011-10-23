@@ -4,11 +4,10 @@
   = javascript_include_tag "galleria.picasa.js"
 %h1 The Gallery
 %ul#tabs
-  %li.selected
-    %a{:href=>"#"}Printed
-  %li
-    %a{:href=>"#"}Printer
+  - for gallery in @galleries
+    %li
+      %a{:href=>"#",:data=>{:album=>gallery.picasa_album}}= gallery.title
 #galleria
 = content_for :bottom do
-  %script picasa_galleria('Printed');
+  %script= "picasa_galleria('#{@galleries.first.picasa_album}');"
 

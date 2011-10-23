@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Emanuel', :city => cities.first)
+Gallery.create([
+  {:title=>"The Printer",:picasa_album=>"Printer"},
+  {:title=>"The Parts",:picasa_album=>"Printed"}
+])
+
