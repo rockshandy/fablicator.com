@@ -5,11 +5,16 @@ gem 'rails', '3.1.0'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-#gem 'sqlite3-ruby', '1.2.1', :require => 'sqlite3' 
+#gem 'sqlite3-ruby', '1.2.1', :require => 'sqlite3'
 
 gem 'mysql2'
 gem 'json'
 gem 'haml'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+#gem 'devise'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -29,4 +34,3 @@ gem 'capistrano'
 
 # To use debugger
 # gem 'ruby-debug'
-

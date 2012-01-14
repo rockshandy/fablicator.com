@@ -13,16 +13,18 @@
     #wrapper
       %header
         = link_to image_tag("logo_lt_gray.png", :title => "fablicator"), root_path
+        = render 'authentications/login'
       #main{:role => "main"}
         %nav
           %ul
-            %li= link_to "Home", root_path
-            %li= link_to "About", about_path
-            %li= link_to "FAQ", faq_path
-            %li= link_to "Gallery", gallery_path
+            %li= link_to_unless_current "Home", root_path
+            %li= link_to_unless_current "About", about_path
+            %li= link_to_unless_current "FAQ", faq_path
+            %li= link_to_unless_current "Gallery", gallery_path
+        - flash.each do |key, value|
+          =content_tag(:div, value, :class => "flash #{key}")
         = yield
     %footer
       %p.right andrew@fablicator.com
       %p.copyright (c) KL Services Group inc.
   = yield :bottom
-

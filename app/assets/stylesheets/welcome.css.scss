@@ -118,6 +118,7 @@ body {
     padding: 10px 5px;
     border-bottom: 5px solid #FF9900;
     background: #565656;
+    position: relative;
   }
 }
 
@@ -128,6 +129,21 @@ body {
   -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   min-height: 100px;
+}
+
+#login {
+  position: absolute;
+  bottom: 2px;
+  right: 0;
+  color: #D3D9DF;
+  > a {
+  &:visited, &:hover {
+    color: #D3D9DF; }
+  &:focus {
+    outline: thin dotted; }
+  &:hover, &:active {
+    outline: 0; }
+  }
 }
 
 nav {
@@ -164,7 +180,7 @@ footer {
 
 /* Galleria */
 #galleria {
-  height:467px;
+  height:500px;
 }
 
 #tabs li {
@@ -213,4 +229,3 @@ footer {
   font-weight: bold;
   cursor: pointer;
 }
-

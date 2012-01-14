@@ -1,0 +1,17 @@
+development:
+  facebook_api_key:
+  facebook_api_secret:
+  t_consumer_key:
+  t_consumer_secret:
+
+production:
+  facebook_api_key:
+  facebook_api_secret:
+  t_consumer_key:
+  t_consumer_secret:
+
+test:
+  facebook_api_key:
+  facebook_api_secret:
+  t_consumer_key:
+  t_consumer_secret: 

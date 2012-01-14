@@ -57,6 +57,13 @@ task :after_update_code, :roles => :app do
   buffer['production']['host'] = "mysql.fablicator.com"
 
   put YAML::dump(buffer), "#{release_path}/config/database.yml", :mode => 0664
+
+  # setup auts for login simply copy auths.yml
+  # should already be made from auths.yml.example
+  buffer = YAML::load_file('config/auths.yml')
+  buffer.delete('test')
+  buffer.delete('development')
+  put YAML:dump(buffer), "#{release_path}/config/auths.yml", :mode => 0664
 end
 
 desc "Restarting after deployment"
@@ -64,4 +71,3 @@ task :after_deploy, :roles => [:app, :db, :web] do
  run "sed 's/# ENV\\[/ENV\\[/g' #{deploy_to}/current/config/environment.rb > #{deploy_to}/current/config/environment.temp"
  run "mv #{deploy_to}/current/config/environment.temp #{deploy_to}/current/config/environment.rb"
 end
-
