@@ -1,7 +1,6 @@
 class AuthenticationsController < ApplicationController
   def create
     auth = request.env['omniauth.auth']
-    puts auth.to_json
     unless @auth = Authorization.find_from_hash(auth)
       # Create a new user or add an auth to existing user, depending on
       # whether there is already a user signed in.
@@ -19,5 +18,14 @@ class AuthenticationsController < ApplicationController
   end
 
   def destroy
+  end
+  
+  protected
+
+  # This is necessary since Rails 3.0.4
+  # See https://github.com/intridea/omniauth/issues/185
+  # and http://www.arailsdemo.com/posts/44
+  def handle_unverified_request
+    true
   end
 end

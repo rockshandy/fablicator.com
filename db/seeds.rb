@@ -10,3 +10,8 @@ Gallery.create([
   {:title=>"The Parts",:picasa_album=>"Printed"}
 ])
 
+Post.create([
+  {:title=>"Woo the first post!",:content=>'The first post of grave importance'},
+  {:title=>"Isn't this the most awesome second post of your life?",:content=>"You bet it is, feel free to use your imagination though as any post I actually right would be too impressive"}
+])
+

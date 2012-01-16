@@ -62,7 +62,10 @@ FablicatorCom::Application.routes.draw do
   match '/logout', :to => 'authentications#logout', :as => 'logout'
   
   # blog related
-  resources :posts
+  resources :posts do
+    resources :comments, :only => [:create,:edit,:update,:destroy]
+  end
+  
 
   # See how all your routes lay out with "rake routes"
 

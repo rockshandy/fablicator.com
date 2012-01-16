@@ -2,3 +2,15 @@
   %h2= @post.title
   - for para in @post.content.split("\n")
     %p= para
+  %section
+    %h2 Comments
+    - if @post.comments.present?
+      = render @post.comments
+    -else
+      %p Be the first!
+  %section
+    %h2 Leave a new comment!
+    - if signed_in?
+      = render 'comments/form'
+    - else
+      %p but please log in first...
