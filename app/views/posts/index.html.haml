@@ -1,0 +1,5 @@
+%header
+  %h1 Fablicator posts
+  %p A short summary of past posts, click on titles to go to the full list with comments!
+- for post in @posts
+  = render :partial=>'summary', :locals => {:post => post}

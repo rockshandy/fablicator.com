@@ -60,6 +60,9 @@ FablicatorCom::Application.routes.draw do
   # auth things
   match '/auth/:provider/callback', :to => 'authentications#create'
   match '/logout', :to => 'authentications#logout', :as => 'logout'
+  
+  # blog related
+  resources :posts
 
   # See how all your routes lay out with "rake routes"
 
