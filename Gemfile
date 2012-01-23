@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0'
+gem 'rails', '3.1.1'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -14,6 +14,9 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 #gem 'devise'
+# Gemfile in Rails >= 3.1
+gem 'activeadmin'
+gem 'meta_search',    '>= 1.1.0.pre'
 
 # Gems used only for assets and not required
 # in production environments by default.
