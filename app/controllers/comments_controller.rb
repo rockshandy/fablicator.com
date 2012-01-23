@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @comment = Comment.new(params[:comment])
-    @comment.author = current_user if signed_in?
+    @comment.author = current_user if logged_in?
     @post.comments << @comment
     redirect_to post_path(@post)
   end

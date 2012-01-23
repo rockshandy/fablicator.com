@@ -10,7 +10,7 @@
       %p Be the first!
   %section
     %h2 Leave a new comment!
-    - if signed_in?
+    - if logged_in?
       = render 'comments/form'
     - else
       %p but please log in first...

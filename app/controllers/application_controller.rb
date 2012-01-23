@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   protected
   
   def authenticate
-    unless signed_in?
+    unless logged_in?
       #unauthorized access
       redirect_to root_path, :notice => 'Please login before doing that.'
     end
@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.includes(:authorizations).find_by_id(session[:user_id])
   end
 
-  def signed_in?
+  def logged_in?
     !!current_user
   end
   
@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
     Authorization::PROVIDERS
   end
 
-  helper_method :current_user, :current_user_with_auths, :signed_in?, :providers
+  helper_method :current_user, :current_user_with_auths, :logged_in?, :providers
 
   def current_user=(user)
     @current_user = user

@@ -14,7 +14,7 @@ class PostsController < ApplicationController
   
   def create
     @post = Post.new(params[:post])
-    if signed_in?
+    if logged_in?
       @post.user = current_user
     end
     
