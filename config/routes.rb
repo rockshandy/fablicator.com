@@ -60,6 +60,11 @@ FablicatorCom::Application.routes.draw do
   # auth things
   match '/auth/:provider/callback', :to => 'authentications#create'
   match '/logout', :to => 'authentications#logout', :as => 'logout'
+  match '/auth/failure', :to => 'authentications#failure'
+  
+  # user relates
+  get "profile", :to => 'users#profile', :as => 'profile'
+  post "profile/update", :to => 'users#update'
   
   # blog related
   resources :posts do

@@ -16,8 +16,9 @@ class AuthenticationsController < ApplicationController
     flash[:notice] = 'Thanks for viewing! Come back some time alright?'
     redirect_to root_path
   end
-
-  def destroy
+  
+  def failure
+    redirect_to root_url, :alert => "Authentication error: #{params[:message].humanize}"
   end
   
   protected

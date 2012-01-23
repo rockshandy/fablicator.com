@@ -1,0 +1,25 @@
+%h1 My Profile
+= form_for @user, {:url => {:action=>"update", :id=>@user}, :method=>'post'} do |f|
+  = render :partial => 'shared/form_errors', :locals => {:obj=>@user,:name=>"user"}
+  %p
+    I have connected with
+    = @connected.join(' and ')
+  - unless @to_connect.empty?
+    %p
+      Connect with:
+      - @to_connect.each do |tc|
+        = provider_img(tc)
+  - if @user.email
+    %p 
+      My registered email is
+      = f.email_field :email
+  - else
+    %p 
+      I haven't registered an email yet but maybe
+      = f.email_field :email
+      would work
+  %p
+    Get updates from us?
+    = f.check_box :subscribed
+  .actions
+    = f.submit "Save changes"

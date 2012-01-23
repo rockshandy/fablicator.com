@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
   def self.create_from_hash!(hash)
     create(:name => hash['info']['name'])
   end
+  
+  # TODO: need to address profile picture issues at some point
 end
