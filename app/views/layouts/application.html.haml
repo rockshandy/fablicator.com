@@ -20,6 +20,7 @@
             %li= link_to_unless_current "Home", root_path
             %li= link_to_unless_current "About", about_path
             %li= link_to_unless_current "FAQ", faq_path
+            %li= link_to_unless_current "Blog", posts_path
             %li= link_to_unless_current "Gallery", gallery_path
         - flash.each do |key, value|
           =content_tag(:div, value, :class => "flash #{key}")

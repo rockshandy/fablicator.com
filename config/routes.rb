@@ -71,7 +71,7 @@ FablicatorCom::Application.routes.draw do
   post "profile/update", :to => 'users#update'
   
   # blog related
-  resources :posts do
+  resources :posts, :only =>[:index,:show] do
     resources :comments, :only => [:create,:edit,:update,:destroy]
   end
   
