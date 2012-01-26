@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120123020750) do
+ActiveRecord::Schema.define(:version => 20120126015507) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -75,12 +75,12 @@ ActiveRecord::Schema.define(:version => 20120123020750) do
   create_table "posts", :force => true do |t|
     t.string   "title"
     t.text     "content"
-    t.integer  "user_id"
+    t.integer  "admin_user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "posts", ["user_id"], :name => "index_posts_on_user_id"
+  add_index "posts", ["admin_user_id"], :name => "index_posts_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"
