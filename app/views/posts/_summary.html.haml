@@ -2,4 +2,4 @@
   %h2
     = post.title
     = "(#{time_ago_in_words(post.updated_at)} ago)"
-  %p= truncate(post.content, :length=>150)
+  %p= post.content.html_safe
