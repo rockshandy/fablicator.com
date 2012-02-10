@@ -1,3 +1,5 @@
+= content_for :head do
+  = javascript_include_tag "comments"
 %article
   %h2= @post.title
   = @post.content.html_safe

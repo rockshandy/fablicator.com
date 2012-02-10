@@ -1,6 +1,9 @@
 %article
   %p By: #{comment.author.name}
   %p Title: #{comment.title}
-  %p Comment: #{comment.body}
-  = link_to 'edit', edit_post_comment_path(@post,comment)
-  = link_to 'destroy', post_comment_path(@post,comment), :confirm => 'Are you sure?', :method => :delete
+  %p
+    Comment:
+    = sanitize comment.body, :tags => %w(strong em a p), :attributes => %w(href title)
+  - if comment.author == current_user
+    = link_to 'edit', edit_post_comment_path(@post,comment)
+    = link_to 'destroy', post_comment_path(@post,comment), :confirm => 'Are you sure?', :method => :delete

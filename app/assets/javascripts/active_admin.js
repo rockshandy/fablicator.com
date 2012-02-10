@@ -6,7 +6,7 @@ $(function(){
 	$('#post_content').tinymce({
         // General options
         theme : "advanced",
-        plugins : "pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template",
+        plugins : "pagebreak,style,layer,table,save,advhr,advimage,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template",
 
         // Theme options
         theme_advanced_buttons1 : "save,newdocument,|,bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,|,styleselect,formatselect,fontselect,fontsizeselect",
@@ -23,7 +23,6 @@ $(function(){
 
         // Drop lists for link/image/media/template dialogs
         template_external_list_url : "js/template_list.js",
-        external_link_list_url : "js/link_list.js",
         external_image_list_url : "js/image_list.js",
         media_external_list_url : "js/media_list.js",
 
