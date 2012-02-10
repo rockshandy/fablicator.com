@@ -25,7 +25,7 @@
         - flash.each do |key, value|
           =content_tag(:div, value, :class => "flash #{key}")
         = yield
-    %footer
+    %footer.clearboth
       %p.right andrew@fablicator.com
       %p.copyright (c) KL Services Group inc.
   = yield :bottom
