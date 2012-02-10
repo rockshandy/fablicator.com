@@ -1,5 +1,4 @@
-/*
-// add that back in! = require tinymce-jquery
+//= require tinymce-jquery
 
 $(function(){
   $('#comment_body').tinymce({
@@ -12,4 +11,3 @@ $(function(){
     theme_advanced_buttons3: "" 
   });
 });
-*/
