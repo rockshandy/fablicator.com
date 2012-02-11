@@ -7,4 +7,17 @@ class Post < ActiveRecord::Base
   }
   
   scope :recent, lambda {|num| published.order("posts.created_at DESC").limit(num)}
+  
+  # returns the first part of a post to a passed in HTML tag
+  # can take an array of tags or regex to try
+  # defaults to paragraph followed by a new line
+  def summary(tries=["</p>","\n"])
+    m = nil
+    i = 0
+    until m != nil
+      m = content.match(/.*?#{tries[i]}/)
+      i+=1
+    end
+    m[0].html_safe if m
+  end
 end

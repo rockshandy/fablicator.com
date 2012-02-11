@@ -1,5 +1,5 @@
 .summary
   %h2
-    = post.title
+    = link_to post.title, post_path(post)
     = "(#{time_ago_in_words(post.updated_at)} ago)"
-  %p= post.content.html_safe
+  %p= post.summary

@@ -11,7 +11,7 @@ Gallery.create([
 ])
 
 Post.create([
-  {:title=>"Woo the first post!",:content=>'The first post of grave importance'},
-  {:title=>"Isn't this the most awesome second post of your life?",:content=>"You bet it is, feel free to use your imagination though as any post I actually right would be too impressive"}
+  {:title=>"Woo the first post!",:content=>'<p>The first post of grave importance</p><p>With 2 paragraphs!</p>'},
+  {:title=>"Isn't this the most awesome second post of your life?",:content=>"<p><strong>You bet it is</strong>, feel free to use your imagination though as any post I actually write would be too impressive</p>"}
 ])
 
