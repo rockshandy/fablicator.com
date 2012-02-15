@@ -19,7 +19,7 @@ class CommentsControllerTest < ActionController::TestCase
       {:user_id=>@user.id}
     assert_redirected_to post_path(@post)    
   end
-  # FIXME: is somehow going to comments/update rather than redirecting... something with resond? 
+
   test "author can update their comments after edit" do
     put :update,
       {:post_id=>@post,:id=>comments(:one)},
