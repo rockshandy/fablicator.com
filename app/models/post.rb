@@ -14,6 +14,8 @@ class Post < ActiveRecord::Base
   def summary(tries=["</p>","\n"])
     m = nil
     i = 0
+    # won't worry about i, upon another iteration an above index array returns nil
+    # which in the regex just matches an empty string, ending the loop
     until m != nil
       m = content.match(/.*?#{tries[i]}/)
       i+=1

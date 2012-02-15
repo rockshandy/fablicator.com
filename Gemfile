@@ -39,3 +39,7 @@ gem 'capistrano'
 
 # To use debugger
 # gem 'ruby-debug'
+
+group :test do
+  gem 'redgreen'
+end

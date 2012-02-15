@@ -1,19 +1,17 @@
 require 'test_helper'
 
 class UsersControllerTest < ActionController::TestCase
-  test "should get profile" do
-    get :profile
-    assert_response :success
+  def setup
+    @user = users(:bill)
   end
-
-  test "should get edit" do
-    get :edit
-    assert_response :success
+  
+  test "should get profile" do
+    get :profile, nil, :user_id => @user.id
+    assert_response :success, flash.inspect
   end
 
   test "should get update" do
-    get :update
-    assert_response :success
+    get :update, {:id => @user.id}, {:user_id => @user.id}
+    assert_redirected_to profile_path
   end
-
 end

@@ -2,8 +2,10 @@
 
 one:
   title: MyString
-  content: MyText
+  content: <p>the first</p><p>the <strong>last</strong></p><a>blah</a>
+  author: one
 
 two:
   title: MyString
   content: MyText
+  author: one
