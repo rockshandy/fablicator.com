@@ -15,6 +15,14 @@ ActiveAdmin::Dashboards.build do
     end
   end
   
+  section "Current Drafts" do
+    ul do
+      Post.drafts.collect do |post|
+        li link_to(post.title, admin_post_path(post))
+      end
+    end
+  end
+  
   # == Render Partial Section
   # The block is rendered within the context of the view, so you can
   # easily render a partial rather than build content in ruby.

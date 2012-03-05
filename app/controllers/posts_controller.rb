@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = Post.published
   end
   
   def show
-    @post = Post.includes({:comments=>:author}).find(params[:id])
+    @post = Post.includes({:comments=>:author}).published.find(params[:id])
     
     respond_to do |format|
       format.html  # show.html.erb

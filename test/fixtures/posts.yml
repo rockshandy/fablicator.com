@@ -4,6 +4,7 @@ one:
   title: MyString
   content: <p>the first</p><p>the <strong>last</strong></p><a>blah</a>
   author: one
+  publish: true
 
 two:
   title: MyString

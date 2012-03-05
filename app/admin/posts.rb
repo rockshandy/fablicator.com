@@ -5,9 +5,7 @@ ActiveAdmin.register Post do
       row :content do
         post.content.html_safe
       end
-      #row :author do
-      #  p.author ? p.author.email : nil
-      #end
+      row :publish
       row :created_at
       row :updated_at
     end
@@ -21,6 +19,7 @@ ActiveAdmin.register Post do
     column :content
     column :created_at
     column :updated_at
+    column :publish
     column "Author" do |p|
       p.author ? p.author.email : nil
     end

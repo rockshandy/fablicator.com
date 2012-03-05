@@ -3,11 +3,14 @@ class Post < ActiveRecord::Base
   has_many :comments, :dependent => :destroy
   
   scope :published, lambda { 
-    where("posts.created_at IS NOT NULL AND posts.created_at <= ?", Time.zone.now)
+    where("posts.created_at IS NOT NULL AND posts.publish = true")
   }
   
   scope :recent, lambda {|num| published.order("posts.created_at DESC").limit(num)}
+  scope :drafts, where(:publish => false)
   
+  # TODO: think about including first image as well in a thumbnail
+  # look into image magick
   # returns the first part of a post to a passed in HTML tag
   # can take an array of tags or regex to try
   # defaults to paragraph followed by a new line

@@ -2,6 +2,7 @@
   = f.inputs "Post Details" do
     = f.input :admin_user_id, :as => :hidden, :input_html => {:value => current_admin_user.id }
     = f.input :title
+    = f.input :publish
     = f.input :content
   = f.buttons
 
