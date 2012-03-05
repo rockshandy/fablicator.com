@@ -74,7 +74,7 @@ FablicatorCom::Application.routes.draw do
   resources :posts, :only =>[:index,:show] do
     resources :comments, :only => [:create,:edit,:update,:destroy]
   end
-  
+  resources :uploads, :only =>[:index,:show,:new,:create]  
 
   # See how all your routes lay out with "rake routes"
 

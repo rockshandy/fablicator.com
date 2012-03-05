@@ -6,3 +6,4 @@ tmp/
 config/*.yml
 notes
 .project
+public/system

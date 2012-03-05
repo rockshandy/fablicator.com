@@ -19,6 +19,8 @@ gem 'sass-rails',   '~> 3.1.5'
 gem 'meta_search', '>= 1.1.0.pre'
 
 gem 'tinymce-rails'
+gem 'paperclip', "~> 2.5.0"
+gem 'mime-types', :require => 'mime/types'
 
 # Gems used only for assets and not required
 # in production environments by default.

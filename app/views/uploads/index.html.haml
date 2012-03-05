@@ -1,0 +1,15 @@
+:javascript
+	//$('#photos_count').html('<%= pluralize(@total_uploads.count, "Photo") %>');
+	//$('#uploads').append("<%= escape_javascript(render(:partial => "uploads/upload", :locals => {:upload => @upload})) %>");
+
+%p#notice notice
+
+%p  Name:  blah
+
+%h3#photos_count= pluralize(@uploads.size, "Photo")
+#uploads= render :partial => @uploads
+
+= render :partial => "show"
+%h3 Upload a Photo
+= form_for :upload, :html => {:multipart => true} do |f|
+	%p= f.file_field :image

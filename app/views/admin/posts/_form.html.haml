@@ -4,3 +4,9 @@
     = f.input :title
     = f.input :content
   = f.buttons
+
+= render :partial => "uploads/show"
+#dialog-form{:title=>"Upload an Image!"}
+  %h2 Please only upload one image at a time for now, I'm working on it ;)
+  %figure#uploaded
+  = render :partial => "uploads/form"

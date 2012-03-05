@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120206315507) do
+ActiveRecord::Schema.define(:version => 20120216030530) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -79,6 +79,15 @@ ActiveRecord::Schema.define(:version => 20120206315507) do
   end
 
   add_index "posts", ["admin_user_id"], :name => "index_posts_on_user_id"
+
+  create_table "uploads", :force => true do |t|
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_update_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"

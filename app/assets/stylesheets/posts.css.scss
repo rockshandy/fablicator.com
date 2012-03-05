@@ -4,3 +4,20 @@
 .summary {
   border-top: 1px solid black;
 }
+
+article.post {
+  width: 95%
+}
+
+section.comments {
+  border-bottom: 4px solid #D3D9DF;
+  article {
+    padding: 5px;
+    &:nth-child(even) {
+      background-color: #D3D9DF;
+    }
+    h3 {
+      border-bottom: 1px dashed black;
+    }
+  }
+}
