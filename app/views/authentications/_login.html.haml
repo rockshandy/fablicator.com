@@ -6,5 +6,6 @@
     )
   -else
     #providers
-      = link_to image_tag('twitter_login.png'), '/auth/twitter'
-      = link_to image_tag('facebook_login.png'), '/auth/facebook'
+      Log in with
+      - Authorization.providers.each do |p|
+        = link_to provider_img(p), "/auth/#{p}"
