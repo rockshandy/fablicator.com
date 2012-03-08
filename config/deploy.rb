@@ -63,7 +63,7 @@ task :after_update_code, :roles => :app do
   buffer = YAML::load_file('config/auths.yml')
   buffer.delete('test')
   buffer.delete('development')
-  put YAML:dump(buffer), "#{release_path}/config/auths.yml", :mode => 0664
+  put YAML::dump(buffer), "#{release_path}/config/auths.yml", :mode => 0664
 end
 
 desc "Restarting after deployment"
