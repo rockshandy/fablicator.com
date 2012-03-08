@@ -1,5 +1,5 @@
 require 'bundler/capistrano'
-load 'deploy/assets'
+#load 'deploy/assets'
 
 default_run_options[:pty] = false
 ssh_options[:forward_agent] = true
