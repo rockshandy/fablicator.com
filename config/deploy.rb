@@ -32,7 +32,7 @@ role :db,  "#{application}", :primary => true # This is where Rails migrations w
 # these http://github.com/rails/irs_process_scripts
 
 namespace :deploy do
-  task :update_database_yml, :roles => [:app,:web] do
+  after "deploy:finalize_update" do
     db_config = "/home/#{user}/database.yml"
     run "cp #{db_config}   #{release_path}/config/database.yml"
     puts "Ran update database_yml"
