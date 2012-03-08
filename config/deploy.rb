@@ -60,10 +60,10 @@ task :after_update_code, :roles => :app do
 
   # setup auts for login simply copy auths.yml
   # should already be made from auths.yml.example
-  buffer = YAML::load_file('config/auths.yml')
-  buffer.delete('test')
-  buffer.delete('development')
-  put YAML::dump(buffer), "#{release_path}/config/auths.yml", :mode => 0664
+  #buffer = YAML::load_file('config/auths.yml')
+  #buffer.delete('test')
+  #buffer.delete('development')
+  #put YAML::dump(buffer), "#{release_path}/config/auths.yml", :mode => 0664
 end
 
 desc "Restarting after deployment"
