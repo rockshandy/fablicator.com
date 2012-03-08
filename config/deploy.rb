@@ -32,6 +32,11 @@ role :db,  "#{application}", :primary => true # This is where Rails migrations w
 # these http://github.com/rails/irs_process_scripts
 
 namespace :deploy do
+  task :update_database_yml, :roles => [:app,:web] do
+    db_config = "/home/#{user}/database.yml"
+    run "cp #{db_config}   #{release_path}/config/database.yml"
+    puts "Ran update database_yml"
+  end
   task :start do ; end
   task :stop do ; end
   task :restart, :roles => :app, :except => { :no_release => true } do
@@ -42,21 +47,21 @@ end
 desc "After updating code we need to populate a new database.yml"
 task :after_update_code, :roles => :app do
   require "yaml"
-  set :production_database_password, proc { Capistrano::CLI.password_prompt("Production database remote Password : ") }
+  #set :production_database_password, proc { Capistrano::CLI.password_prompt("Production database remote Password : ") }
 
-  buffer = YAML::load_file('config/database.yml.example')
+  #buffer = YAML::load_file('config/database.yml.example')
   # get ride of uneeded configurations
-  buffer.delete('test')
-  buffer.delete('development')
+  #buffer.delete('test')
+  #buffer.delete('development')
 
   # Populate production element
-  buffer['production']['adapter'] = "mysql2"
-  buffer['production']['database'] = "fablicator_production"
-  buffer['production']['username'] = user
-  buffer['production']['password'] = production_database_password
-  buffer['production']['host'] = "mysql.fablicator.com"
+  #buffer['production']['adapter'] = "mysql2"
+  #buffer['production']['database'] = "fablicator_production"
+  #buffer['production']['username'] = user
+  #buffer['production']['password'] = production_database_password
+  #buffer['production']['host'] = "mysql.fablicator.com"
 
-  put YAML::dump(buffer), "#{release_path}/config/database.yml", :mode => 0664
+  #put YAML::dump(buffer), "#{release_path}/config/database.yml", :mode => 0664
 
   # setup auts for login simply copy auths.yml
   # should already be made from auths.yml.example
