@@ -2,6 +2,8 @@
 
 bill:
   name: Bill Preston
+  display_name: Bill P.
 
 ted:
   name: Ted Logan
+  display_name: Ted L.

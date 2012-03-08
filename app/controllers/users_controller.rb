@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_filter :authenticate
 
+  # OPTIMIZE: could probably clean this up some
   def profile
     @user = current_user_with_auths
     @connected = @user.authorizations.collect{|a| a.provider}
@@ -12,7 +13,8 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find_by_id(params[:id])
-    
+    @connected = @user.authorizations.collect{|a| a.provider}
+    @to_connect = providers - @connected
     unless @user && @user == current_user
       redirect_to root_path, :warn => "Weird, that's not who you are logged in as..."
     end

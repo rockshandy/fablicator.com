@@ -45,4 +45,5 @@ gem 'capistrano'
 
 group :test do
   gem 'redgreen'
+  gem 'mocha', :require => false
 end

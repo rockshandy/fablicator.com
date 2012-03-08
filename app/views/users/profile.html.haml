@@ -2,13 +2,21 @@
 = form_for @user, {:url => {:action=>"update", :id=>@user}, :method=>'post'} do |f|
   = render :partial => 'shared/form_errors', :locals => {:obj=>@user,:name=>"user"}
   %p
+    I can see myself posting publically as
+    = f.text_field :display_name, :title => "Initially these are not unique!"
+  %p
     I have connected with
-    = @connected.join(' and ')
+    - @connected.each do |con|
+      = provider_img(con)
+      = link_to '(x)',
+        disconnect_path(con),
+        :confirm => 'Are you sure you want to remove this authentication option?',
+        :method => :delete, :class => "remove", :title => "disconnect"
   - unless @to_connect.empty?
     %p
-      Connect with:
+      Connect further with:
       - @to_connect.each do |tc|
-        = provider_img(tc)
+        = provider_link(tc)
   - if @user.email
     %p 
       My registered email is

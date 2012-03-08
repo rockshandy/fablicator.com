@@ -1,6 +1,6 @@
 #login
   - if logged_in?
-    Hey #{link_to current_user.name, profile_path}!
+    Hey #{link_to current_user.display_name, profile_path}!
     (
     =link_to "logout", logout_path
     )
@@ -8,4 +8,4 @@
     #providers
       Log in with
       - Authorization.providers.each do |p|
-        = link_to provider_img(p), "/auth/#{p}"
+        = provider_link(p)

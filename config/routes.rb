@@ -65,6 +65,7 @@ FablicatorCom::Application.routes.draw do
   match '/auth/:provider/callback', :to => 'authentications#create'
   match '/logout', :to => 'authentications#logout', :as => 'logout'
   match '/auth/failure', :to => 'authentications#failure'
+  match '/auth/destroy/:provider', :to => 'authentications#destroy', :as => 'disconnect'
   
   # user relates
   get "profile", :to => 'users#profile', :as => 'profile'

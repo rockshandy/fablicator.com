@@ -1,15 +1,16 @@
 = content_for :head do
   = javascript_include_tag "comments"
-%article
+  = stylesheet_link_tag "posts"
+%article.post
   %h2= @post.title
   = @post.content.html_safe
-  %section
-    %h2 Comments
+  %section.comments
+    %h2 Comments on "#{@post.title}"
     - if @post.comments.present?
       = render @post.comments
     -else
       %p Be the first!
-  %section
+  %section.new
     %h2 Leave a new comment!
     - if logged_in?
       = render 'comments/form'
