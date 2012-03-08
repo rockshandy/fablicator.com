@@ -1,4 +1,5 @@
 class WelcomeController < ApplicationController
+  # TODO: look up bot prevention skills see if facebook and twitter and google login is enough
   def index
   end
 
