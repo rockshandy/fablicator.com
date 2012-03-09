@@ -5,5 +5,7 @@
  *= require_self
  *= require style
  *= require welcome
+ *= require posts
+ *= require galleria.classic
 */
 

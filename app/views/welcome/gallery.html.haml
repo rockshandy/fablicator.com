@@ -1,7 +1,5 @@
 = content_for :head do
-  = stylesheet_link_tag "galleria.classic.css"
-  = javascript_include_tag "galleria-1.2.5", "galleria.classic.js", "welcome.gallery"
-  = javascript_include_tag "galleria.picasa.js"
+  = javascript_include_tag "galleria"
 %h1 The Gallery
 %ul#tabs
   - for gallery in @galleries

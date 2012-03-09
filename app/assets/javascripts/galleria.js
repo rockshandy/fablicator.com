@@ -1,4 +1,7 @@
-// file for the gallery page to seetup galleria and picasa goodness
+//= require galleria-1.2.5
+//= require galleria.classic
+//= require galleria.picasa
+
 $(function(){
   $('#tabs a').click(function(){
     picasa_galleria($(this).data('album'))
@@ -18,4 +21,3 @@ function picasa_galleria(gallery){
       });
   });
 }
-

@@ -1,8 +1,7 @@
 //= require active_admin/base
 //= require jquery
 //= require tinymce-jquery
-//= require jquery.uploadify.v2.1.4.min
-//= require swfobject
+//= require uploadify-manifest
 
 $(function(){
 	$('#post_content').tinymce({
