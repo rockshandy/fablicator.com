@@ -4,6 +4,6 @@ module ApplicationHelper
   end
   
   def provider_link(p)
-    link_to provider_img(p), "auth/#{p}"
+    link_to provider_img(p), "/auth/#{p}"
   end
 end
