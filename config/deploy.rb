@@ -31,6 +31,8 @@ role :db,  "#{application}", :primary => true # This is where Rails migrations w
 # if you're still using the script/reaper helper you will need
 # these http://github.com/rails/irs_process_scripts
 
+# OPTIMIZE: can probably make the below things tasks and switch after syntax
+#           also the very bottom :after_ user is deprecated should fix that
 namespace :deploy do
   after "deploy:finalize_update" do
     %w(database.yml auths.yml).each do |yml|

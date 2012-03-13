@@ -1,7 +1,12 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   protected
-  
+  # TODO: see if can match widths for edit/view content of posts across tinymce and user display
+  # TODO: add last updated timestamp with proper html5 markup to blog posts
+  # TODO: increase default size of dialog upload box
+  # TODO: look into video embed
+  # TODO: get better favicon
+  # TODO: make vector/gimp layer version of logo for infisizeing  
   def authenticate
     unless logged_in?
       #unauthorized access
