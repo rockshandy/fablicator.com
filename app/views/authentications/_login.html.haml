@@ -7,5 +7,4 @@
   -else
     #providers
       Log in with
-      - Authorization.providers.each do |p|
-        = provider_link(p)
+      = render :partial => 'authentications/base_login'

@@ -14,4 +14,8 @@
     - if logged_in?
       = render 'comments/form'
     - else
-      %p but please log in first...
+      %p
+        but please log in first...
+        (
+        = render :partial => 'authentications/base_login'
+        )
