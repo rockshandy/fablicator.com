@@ -45,7 +45,6 @@ namespace :deploy do
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
   end
-  load 'deploy/assets'
 
   namespace :assets do
     desc 'Run the precompile task locally and rsync with shared'
