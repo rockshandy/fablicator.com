@@ -1,6 +1,6 @@
 %article.comment
   %h3
-    #{comment.author.display_name} says:
+    #{comment.author.display_name || "someone"} says:
   %p
     = sanitize comment.body, :tags => %w(strong em a p), :attributes => %w(href title)
   - if comment.author == current_user

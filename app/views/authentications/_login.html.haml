@@ -1,6 +1,6 @@
 #login
   - if logged_in?
-    Hey #{link_to current_user.display_name, profile_path}!
+    Hey #{link_to current_user.display_name || current_user.name, profile_path}!
     (
     =link_to "logout", logout_path
     )
