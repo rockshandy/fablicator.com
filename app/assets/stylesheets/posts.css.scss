@@ -22,3 +22,14 @@ section.comments {
     }
   }
 }
+
+h2 span {
+  font-size: .5em;
+}
+
+h2 a:first-child {
+  color: #5E6469;
+  &:hover {
+    color: #5E6469;
+  }
+}

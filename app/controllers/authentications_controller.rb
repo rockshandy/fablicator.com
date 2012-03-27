@@ -10,11 +10,17 @@ class AuthenticationsController < ApplicationController
     
     if @auth # Log the authorizing user in.
       self.current_user = @auth.user
-      redirect_to((request.env['omniauth.origin'] || root_path),
-        :notice => "Welcome, #{current_user.name}.")
+      redir = root_path
+      if request.env['omniauth.origin']
+        redir = request.env['omniauth.origin']
+      end
+      if redir.index(/posts\/\d/)
+        redir += "#new-comment"
+      end
+      redirect_to redir, :notice => "Welcome, #{current_user.name}."
     else # redirect backwards, ask to try again unique save failed
       redirect_to((request.env['omniauth.origin'] || root_path),
-      :notice => "Sorry, please try to connect again!")
+        :notice => "Sorry, please try to connect again!")
     end
   end
 
